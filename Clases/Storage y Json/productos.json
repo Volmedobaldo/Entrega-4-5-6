@@ -1,0 +1,14 @@
+{
+    "inventario": [
+{
+    "nombre": "Fideos",
+    "cantidad": 3,
+    "precio": 300
+},
+{
+    "nombre": "Arroz",
+    "cantidad": 25,
+    "precio": 70
+}
+    ]
+}
