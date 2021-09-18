@@ -1,4 +1,5 @@
-// SEGUNDA ENTREGA FINAL
+//  ENTREGA FINAL
+
 
 const botonCargar = document.getElementById('btnCargar');
 const content = document.getElementById('content');
@@ -22,45 +23,46 @@ function mostrarCard(event) {
 
   crearCard(inputNameValue, inputAgeValue, inputExpensesValue, inputYearsValue, content);
 }
+let garantiasCard = [];
 
 function crearCard(name, age, expenses, years, element) {
-  const card = document.createElement('div');
+  const newCard = document.createElement('div');
 
-  card.className = "card m-2 p-3";
-
+  newCard.className = "newCard";
   // DEFINO VARIABLE GARANTIA 
   let garantia = ((Number(age) + Number(expenses)) * Number(years));
 
   // AGREGO VARIABLE GARANTIA DECLARADA ARRIBA
 
-  card.innerHTML = `<h2>Dirección: ${name}</h2>
-  <h3>Alquiler: ${age}</h3>
-  <h4>Expensas: ${expenses}</h4>
-  <h5>Años del contrato: ${years}</h5>
-  <h6>Seguro de caución: ${garantia}
+  newCard.innerHTML = style = `<h2 class="info">Dirección: ${name}</h2>
+  <h3 class="info">Alquiler: ${age}</h3>
+  <h4 class="info">Expensas: ${expenses}</h4>
+  <h5 class="info" >Años del contrato: ${years}</h5>
+  <h6 class="info">Seguro de caución: ${garantia}
   `;
   console.log("age: ", age);
   console.log("expenses: ", expenses);
   console.log("years: ", years);
   console.log("garantia: ", garantia);
 
-  let garantiasCard = [];
+  let garantiaObj = new garantiasObject(name, age, expenses, years, garantia)
+  garantiasCard.push(garantiaObj);
+  console.log(garantiasCard);
 
-  function garantiasObject() {
-    this.name = name,
+  element.appendChild(newCard);
+}
+
+function garantiasObject(name, age, expenses, years, garantia) {
+  this.name = name,
     this.age = age,
     this.expenses = expenses,
     this.years = years,
     this.garantia = garantia
-  }
-
-  function cargarGarantia() {
-    garantiasObject.push(garantiasCard);
-  }
-  console.log("garantiasCard", garantiasCard);
-
-  element.appendChild(card);
 }
+
+const note = document.querySelector('.card');
+note.style.backgroundColor = '#ccc5b9';
+
 
 
 

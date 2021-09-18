@@ -1,58 +1,72 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="./main.css" rel="stylesheet">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link href="./main.css" rel="stylesheet">
 
-    <title>Seguro de caucion</title>
-  </head>
-  <body> 
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
-    <div class="container h-100">
-      <div id="content" class="d-flex row h-100 align-items-center justify-content-center">
-        <div class="col justify-content-center d-flex">
-          <div class="card p-3" style="width: 400px;">
-            <form id="custom-form">
-              <div class="mb-3">
-                <label for="name" class="form-label">Dirección:</label>
-                <input id="name" autocomplete="off" type="text" class="form-control" >
+  <title>Seguro de Caución</title>
+  <link rel="shortcut icon" href="data:image/png;base64,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" />
+
+</head>
+
+<body class="body">
+
+  <h1 class="titulo">Seguro de Caución</h1>
+  <h2 class="titulo2">¡Calculá tu seguro con nosotros!</h2>
+  <img class="foto" src="Fotoinicio.jpeg" alt="FotoInicio">
+
+  <div class="container h-100">
+    <div id="content" class="d-flex row h-100 align-items-center justify-content-center">
+      <div class="col justify-content-center d-flex">
+        <div class="card p-3" style="width: 400px;">
+          <form id="custom-form">
+            <div class="mb-3">
+              <label for="name" class="form-label">Dirección:</label>
+              <input id="name" autocomplete="off" type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="age" class="form-label">Alquiler:</label>
+              <input id="age" type="number" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="expenses" class="form-label">Expensas:</label>
+              <input id="expenses" type="number" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="years" class="form-label">Años del contrato:</label>
+              <input id="years" type="number" class="form-control">
+              <div class="botones">
+                <button class="btn btn-secondary" type="submit" value="Eliminar todo">Eliminar todo</button>
+                <button id="btnCargar" class="btn btn-primary">Agregar garantía</button>
               </div>
-              <div class="mb-3">
-                <label for="age" class="form-label">Alquiler:</label>
-                <input id="age" type="number" class="form-control" >
-              </div>
-              <div class="mb-3">
-                <label for="expenses" class="form-label">Expensas:</label>
-                <input id="expenses" type="number" class="form-control" >
-              </div>
-              <div class="mb-3">
-                <label for="years" class="form-label">Años del contrato:</label>
-                <input id="years" type="number" class="form-control" >
-              <input type="submit" value="Eliminar todo">
-              <button id="btnCargar"class="btn btn-primary">Agregar garantía</button>
-            </form>
-          </div>
+          </form>
         </div>
       </div>
     </div>
-    
+  </div>
 
-    <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script src="main.js"></script>
+  <!-- Optional JavaScript; choose one of the two! -->
 
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+  <!-- Option 1: Bootstrap Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="main.js"></script>
+
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
-  </body>
+</body>
+
 </html>
