@@ -67,63 +67,6 @@ note.style.backgroundColor = '#ccc5b9';
 
 
 
-//PROBLEMA: No me trae la formula de garantia , me la incluye en la card pero NAN
-// quiero agregar un console log para que me mande la info a la consola
-// ver array y objetos
-
-
-//Segunda forma
-
-/*  botonCargar.onclick = (event) => {
-  crearCard('Ariel', 40, content);
-}  */
-
-
-
-// inputName.addEventListener('change', onNameChange);
-
-// function onNameChange(event) {
-//   console.log('Target:', event.target);
-//   console.log('Value:', event.target.value);
-// }
-
-// inputName.onkeydown = (event) => {
-//   if(event.key == 2) {
-//     //console.log('aprete el 2');
-//   }
-// }
-
-// inputName.onkeyup = function(event) {
-//   console.log(event)
-// }
-
-// form.onmouseenter = () => {
-//   document.body.style.backgroundColor = "green";
-// }
-
-
-// form.onmouseleave = () => {
-//   document.body.style.backgroundColor = "blue";
-// }
-
-
-
-// form.onsubmit = (e) => {
-//   e.preventDefault();
-//   if(Number(inputAge.value) < 18) {
-//     const alert = document.createElement('div');
-//     alert.className ="alert alert-danger";
-//     alert.innerHTML = 'Sos menor de edad'
-
-//     form.appendChild(alert);
-//   }
-// }
-
-
-
-//Tercera forma No es recomendada ya que no es buena práctica utilizar el js en el html.
-
-
 
 
 
