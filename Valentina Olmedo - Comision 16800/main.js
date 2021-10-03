@@ -24,6 +24,10 @@ function mostrarCard(event) {
   crearCard(inputNameValue, inputAgeValue, inputExpensesValue, inputYearsValue, content);
 }
 let garantiasCard = [];
+var mensaje = JSON.parse(localStorage.getItem("garantias"));
+// Este console.log muestra las garantias creadas que fueron guardadas 
+// en localStorage aun cuando se hace refresh a la pagina.
+// console.log(mensaje);
 
 function crearCard(name, age, expenses, years, element) {
   const newCard = document.createElement('div');
@@ -40,14 +44,13 @@ function crearCard(name, age, expenses, years, element) {
   <h5 class="info" >Años del contrato: ${years}</h5>
   <h6 class="info">Seguro de caución: ${garantia}
   `;
-  console.log("age: ", age);
-  console.log("expenses: ", expenses);
-  console.log("years: ", years);
-  console.log("garantia: ", garantia);
 
   let garantiaObj = new garantiasObject(name, age, expenses, years, garantia)
   garantiasCard.push(garantiaObj);
-  console.log(garantiasCard);
+  // Este console.log muestra las tarjetas que son pusheadas a las garantias, y que 
+  // luego son guardadas en el localStorage
+  // console.log(garantiasCard);
+  localStorage.setItem("garantias", JSON.stringify(garantiasCard));
 
   element.appendChild(newCard);
 }
@@ -62,9 +65,6 @@ function garantiasObject(name, age, expenses, years, garantia) {
 
 const note = document.querySelector('.card');
 note.style.backgroundColor = '#ccc5b9';
-
-
-
 
 
 
